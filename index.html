@@ -116,6 +116,13 @@
                 <path d="M 0 10 C 20 0, 40 20, 60 10 S 80 0, 100 10" />
             </svg>
         </div>
+        
+        <!-- プロポーズの言葉セクション -->
+        <section id="content-proposal" class="relative text-center my-12">
+            <span class="absolute -top-8 left-1/2 -translate-x-1/2 text-9xl text-amber-500 opacity-10 font-serif select-none">“</span>
+            <p class="text-2xl font-semibold text-amber-800/90 tracking-widest">結婚してください</p>
+        </section>
+        
 
         <!-- 歌詞のセクション -->
         <section class="lyrics text-center leading-loose tracking-wider text-zinc-700">
@@ -185,6 +192,7 @@
                     '毎月、帰り道の途中で花を買って帰る。勿体無いのでドライフラワーにしたいと妻は言うのだけれど、そうすると家がどんどん花で溢れてしまうと困っている。なので最近は、花瓶にさして栄養剤を入れて、萎れるまで見ている。',
                     'プロポーズの時に向日葵の花を渡した。妻は音楽とは殆ど関わりがない生活をしていて、だからこそ心地良くて、ずっと僕にとっての太陽だった。これからもそうだと思う。永遠に変わらないと誓える。'
                 ],
+                proposal: '結婚してください',
                 lyricsTitle: '向日葵',
                 lyrics: [
                     '私の命をあなたにあげたい<br>私の命をあなたにあげたい',
@@ -208,6 +216,7 @@
                     '每个月回家路上都会买花带回去。妻子觉得太浪费了，想做成干花，但那样的话家里就会被花一点点填满，很让人头疼。所以最近都是插在花瓶里，放了营养剂，就这样一直看着它枯萎为止。',
                     '求婚的时候送了她向日葵。妻子的生活几乎和音乐毫无关联，正因如此才让我觉得安心和舒适，她一直是我心里的太阳。我想以后也会是这样。我发誓，这份心意永远不会改变。'
                 ],
+                proposal: '请和我结婚',
                 lyricsTitle: '向日葵',
                 lyrics: [
                     '我想把我的生命献给你<br>我想把我的生命献给你',
@@ -231,6 +240,7 @@
                     '每個月回家的路上都會買花回去。妻子說因為可惜所以想做成乾花，但那樣的話家裡會越來越被花填滿，就有點頭疼。於是最近是插在花瓶裡，加上營養劑，就這樣看著它們直到枯萎。',
                     '求婚的時候送了她一朵向日葵。妻子幾乎和音樂無緣，正因為如此，她的生活讓我感到安心，她一直是我心中的太陽。我覺得今後也會是這樣。我可以發誓，這份心意永遠不會改變。'
                 ],
+                proposal: '請和我結婚',
                 lyricsTitle: '向日葵',
                 lyrics: [
                     '我想把我的生命獻給你<br>我想把我的生命獻給你',
@@ -254,6 +264,7 @@
                     'Every month on my way home, I buy flowers. My wife says it’s a waste not to make them into dried flowers, but then the house would fill up with them, which is a bit of a problem. So lately, I’ve just been putting them in a vase with nutrients and watching them until they wither.',
                     'When I proposed, I gave her a sunflower. My wife has almost nothing to do with music in her daily life, and that’s precisely why it’s so comforting. She’s always been my sun. I think she always will be. I can swear this will never change.'
                 ],
+                proposal: 'Please marry me',
                 lyricsTitle: 'Sunflower',
                 lyrics: [
                     'I want to give you my life<br>I want to give you my life',
@@ -281,7 +292,7 @@
                     artist: 'n-buna',
                     album: data.lyricsTitle, // アルバム名も曲名と同じに設定
                     artwork: [
-                        { src: 'https://links.0m-p.space/sfcover.png', sizes: '512x512', type: 'image/png' }
+                        { src: 'cover.png', sizes: '512x512', type: 'image/png' }
                     ]
                 });
             }
@@ -321,6 +332,8 @@
             
             const diaryContainer = document.querySelector('#content-diary > div');
             diaryContainer.innerHTML = data.diary.map(p_text => `<p>${p_text}</p>`).join('');
+            
+            document.querySelector('#content-proposal p').textContent = data.proposal;
 
             document.getElementById('content-lyrics-title').textContent = data.lyricsTitle;
             const lyricsContainer = document.getElementById('content-lyrics');
